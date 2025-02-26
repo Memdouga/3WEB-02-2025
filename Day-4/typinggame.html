@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Game</title>
+</head>
+
+<body>
+  <h1>Typing Game - Easy level</h1>
+  <p>Press Space to Start</p>
+
+  <h2 id="letter"></h2>
+
+  <p>Score: <span id="score">0</span></p>
+
+  <script>
+    let score = 0;
+    let currentLetter = '';
+    const letterDisplay = document.getElementById("letter");
+    const scoreDisplay = document.getElementById("score");
+
+    function getRandomLetter() {
+      const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      return letters[Math.floor(Math.random() * letters.length)];
+    }
+
+    function startGame() {
+      currentLetter = getRandomLetter();
+      letterDisplay.textContent = currentLetter;
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.code === "Space" && !currentLetter) {
+        startGame();
+      } else if (event.key.toUpperCase() === currentLetter) {
+        score++;
+        scoreDisplay.textContent = score;
+        startGame();
+      }
+    });
+  </script>
+</body>
+
+</html>

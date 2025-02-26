@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Clicker</title>
+</head>
+
+<body>
+  <h1>Cookie Clicker</h1>
+  <p>Score: <span id="score">0</span></p>
+  <button id="clicker">Click me!</button>
+  <div id="upgrades"></div>
+
+  <script>
+    let score = 0;
+    let clickValue = 1;
+    let upgradeCost = 250;
+
+    document.getElementById('clicker').addEventListener('click', () => {
+      score += clickValue;
+      document.getElementById('score').textContent = score;
+      checkUpgrades();
+    });
+
+    function checkUpgrades() {
+      if (score >= 100 && !document.getElementById('upgrade-1')) {
+        let upgradeBtn = document.createElement('button');
+        upgradeBtn.id = 'upgrade-1';
+        upgradeBtn.textContent = `Upgrade Click (Cost: ${upgradeCost} pts)`;
+        upgradeBtn.addEventListener('click', () => buyUpgrade(upgradeBtn));
+        document.getElementById('upgrades').appendChild(upgradeBtn);
+      }
+    }
+
+    function buyUpgrade(button) {
+      if (score >= upgradeCost) {
+        score -= upgradeCost;
+        clickValue *= 2;
+        upgradeCost = Math.floor(upgradeCost * 1.75);
+        button.textContent = `Upgrade Click (Cost: ${upgradeCost} pts)`;
+        document.getElementById('score').textContent = score;
+      }
+    }
+  </script>
+</body>
+
+</html>
