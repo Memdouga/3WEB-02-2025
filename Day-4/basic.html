@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <header id="idHeader">
+    <h1>HELLO</h1>
+  </header>
+  <div>
+    <button class="changeColor">blue</button>
+    <button class="changeColor">red</button>
+    <button class="changeColor">green</button>
+  </div>
+
+  <!-- <script>
+    const variable1 = "constante"
+    let variable2 = "pas constante"
+    let character = ""
+    let number = 1234
+
+    let var3 = null;
+    let var4;
+
+    for (let i = 0; i < 10; i++) {
+      console.log(i)
+    }
+
+    for (let i = 0; i < variable2.length; i++) {
+      console.log(variable2[i])
+    }
+
+    const tableau = [
+      "Hello",
+      1234,
+      null,
+      "World",
+      undefined
+    ]
+
+    if (1 === 2) {
+      console.log("ok")
+    } else {
+      console.log("no ok")
+    }
+
+    if (typeof "2" === "string") {
+      console.log("ok")
+    } else {
+      console.log("not ok")
+    }
+
+    if (typeof 1 == typeof "1") {
+      console.log("ok")
+    } else {
+      console.log("vas jouer")
+    }
+
+
+
+
+    for (let i = 0; i < tableau.length; i++) {
+      console.log(tableau[i])
+      console.log(typeof tableau[i])
+    }
+
+    const obj1 = ["Ho", "He"]
+    const obj2 = {
+      ins1: "string",
+      ins2: 123,
+      ins3: ["Hello", "world"],
+      ins4: {
+        name: "XYZ",
+        url: "#"
+      },
+      ins5: function () { console.log("HI! I am a function") },
+    }
+
+    function sum(x, y) {
+      return x + y
+    }
+
+    const tab2 = []
+  </script> -->
+  <script>
+    const btns = document.getElementsByClassName("changeColor")
+
+    const header = document.getElementById("idHeader")
+
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", () => header.style.color = btns[i].textContent)
+    }
+
+
+  </script>
+
+  <script>
+    const headerV2 = document.getElementById("idHeader")
+
+    function changeCouleur() {
+      headerV2.style.color = "red"
+    }
+  </script>
+</body>
+
+</html>

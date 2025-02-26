@@ -6,7 +6,7 @@
 - strings Length
 - Revising strings
 - numbers
-- rounding numbers
+- rounding numbers (Math.round)
 - for loop
 - arrays
 - array filtering
