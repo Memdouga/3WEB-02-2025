@@ -42,5 +42,3 @@ Then move on.
 - push online
 - activate github page
 - share your github nickname with me
-
-# PART 3 -
